@@ -15,7 +15,8 @@ def ex01(d):
 print(ex01(data))
 
 # This funciton for the 2nd ex takes the result of the conovlution (mod) of the
-# data, in 3 increments and passes it to the first function in order to get
+# data, in 3 increments and passes it to the first function in order to get the
+# number of increases
 
 
 def increaseWindow(d, wsize=3):
