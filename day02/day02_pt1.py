@@ -12,12 +12,12 @@ data = open("day02/inputd2.txt").read().split('\n')[:-1]
 # starts with one of the movements, it adds or subtracts from the counter,
 # after converting it to an integer in the appropiate place
 
-for i in data:
-    if i.startswith('forward'):
-        horizontal += int(i[8:])
-    elif i.startswith('down'):
-        depth += int(i[5:])
-    elif i.startswith('up'):
-        depth -= int(i[3:])
+for lines in data:
+    if lines.startswith('forward'):
+        horizontal += int(lines[8:])
+    elif lines.startswith('down'):
+        depth += int(lines[5:])
+    elif lines.startswith('up'):
+        depth -= int(lines[3:])
 
 print(depth * horizontal)

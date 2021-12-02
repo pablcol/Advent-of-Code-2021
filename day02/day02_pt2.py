@@ -16,13 +16,13 @@ data = open("day02/inputd2.txt").read().split('\n')[:-1]
 # with said aim, then stores it in the appropiate value after converting it
 # to an integer in the appropiate place
 
-for i in data:
-    if i.startswith('forward'):
-        horizontal += int(i[8:])
-        depth += aim * int(i[8:])
-    elif i.startswith('down'):
-        aim += int(i[5:])
-    elif i.startswith('up'):
-        aim -= int(i[3:])
+for lines in data:
+    if lines.startswith('forward'):
+        horizontal += int(lines[8:])
+        depth += aim * int(lines[8:])
+    elif lines.startswith('down'):
+        aim += int(lines[5:])
+    elif lines.startswith('up'):
+        aim -= int(lines[3:])
 
 print(depth * horizontal)
