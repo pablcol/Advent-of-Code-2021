@@ -20,6 +20,7 @@ while binarycount < 12:
         elif i[binarycount] == "1":
             onecount += 1
 # then calculate the rates comparing the number of 1s and 0s: for the gamma the
+# most common ones, for the epsilon the less ones.
     if onecount > zerocount:
         gammarate[0] = gammarate[0] + "1"
         epsilonrate[0] = epsilonrate[0] + "0"
