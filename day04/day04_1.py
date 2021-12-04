@@ -1,9 +1,9 @@
-file = open("day04/inputd4.txt")
+input = open("day04/inputd4.txt", "r")
 
-bingo_numbers = list(map(int, next(file).split(",")))
+bingo_numbers = list(map(int, next(input).split(",")))
 
 boards = []
-for row in file:
+for row in input:
     row = row.strip()
     if row == "":
         board = []
@@ -12,7 +12,7 @@ for row in file:
     board += map(int, row.split())
 
 
-def wins(board: list) -> bool:
+def wins(board: list):
     for i in range(0, 5):
         if all(n < 0 for n in board[5 * i:5 * i + 5]):
             return True
