@@ -21,6 +21,7 @@ def wins(board: list):
     return False
 
 
+# This function picks the first possible winning board.
 def first_winner():
     for number in bingo_numbers:
         for i in range(len(boards)):
@@ -29,6 +30,10 @@ def first_winner():
                 return number * sum(n for n in boards[i] if n >= 0)
 
 
+print(first_winner())
+
+
+# This function picks the last possible winning board.
 def last_winner():
     for number in bingo_numbers:
         winners = []
@@ -42,5 +47,4 @@ def last_winner():
             boards.remove(board)
 
 
-print(first_winner())
 print(last_winner())
