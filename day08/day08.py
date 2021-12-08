@@ -41,8 +41,8 @@ def process_line(ls):
 
 part_one = 0
 part_two = 0
-for line in data:
-    p = process_line(line)
+for lines in data:
+    p = process_line(lines)
     part_one += len([x for x in p if x in [1, 4, 7, 8]])
     part_two += int("".join([str(x) for x in p]))
 
