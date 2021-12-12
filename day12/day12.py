@@ -23,5 +23,8 @@ def search(part, seen=set(), cave='start'):
                for n in neighbours[cave])
 
 
-print(search(part=1))
-print(search(part=2))
+result1 = search(part=1)
+print("Part 1: %s" % result1)
+
+result2 = (search(part=2))
+print("Part 2: %s" % result2)
