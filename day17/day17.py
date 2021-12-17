@@ -1,4 +1,4 @@
-file = open("day17/inputd17.txt", 'r')
+file = open('day17/inputd17.txt', 'r')
 minx, maxx, miny, maxy = sum([[int(y) for y in x.split('=')[1].split('..')]
                               for x in file.read().split(', ')], [])
 count, best = 0, 0
@@ -13,5 +13,5 @@ for tx in range(1, maxx + 1):
                 count += 1
                 best = max(best, h)
                 break
-print(best)
-print(count)
+print("Part 1: %s" % best)
+print("Part 2: %s " % count)
