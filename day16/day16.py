@@ -49,5 +49,5 @@ def decode(data):
     return reduce(f, get_subpackets())
 
 
-print(decode(bits))
-print(vnum_total)
+print("Part 1: " + str(decode(bits)))
+print("Part 2: %s " % vnum_total)
