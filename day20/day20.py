@@ -14,8 +14,6 @@ for r, line in enumerate(start.strip().split('\n')):
             G.add((r, c))
 
 
-# on=true means G says what pixels are on (all the rest are off).
-# on=false means G says what pixels are *off* (all the rest are on)
 def step(G, on):
     G2 = set()
     rlo = min([r for r, c in G])
