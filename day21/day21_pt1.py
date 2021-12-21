@@ -16,4 +16,5 @@ while not done:
             result = (score[1-player]*(dice-1))
             done = True
             break
+
 print("Part 1: %s" % result)
