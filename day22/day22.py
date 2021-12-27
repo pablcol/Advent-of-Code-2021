@@ -41,25 +41,25 @@ for r, line in enumerate(data.strip().split('\n')):
     C.append((x1, x2, y1, y2, z1, z2, cmd == 'on'))
 
 
-def expand(A):
-    B = set()
-    for x in A:
-        B.add(x)
-    B = sorted(B)
+def expand(aa):
+    bb = set()
+    for x in aa:
+        bb.add(x)
+    bb = sorted(bb)
 
     ret = {}
-    U = {}
+    u = {}
     len_sum = 0
-    for i, x in enumerate(B):
+    for i, x in enumerate(bb):
         ret[x] = i
-        if i+1 < len(B):
-            len_ = B[i+1]-x if i+1 < len(B) else None
+        if i+1 < len(bb):
+            len_ = bb[i+1]-x if i+1 < len(bb) else None
             len_sum += len_
-            U[i] = len_
-    for a in A:
+            u[i] = len_
+    for a in aa:
         assert a in ret
-    assert len_sum == max(B)-min(B), f'{len_sum} {max(B)-min(B)}'
-    return (ret, U)
+    assert len_sum == max(bb)-min(bb), f'{len_sum} {max(bb)-min(bb)}'
+    return ret, u
 
 
 X.add(-50)
@@ -75,7 +75,7 @@ Z, UZ = expand(Z)
 
 
 def solve(p1):
-    G = set()
+    g = set()
     for t, (x1, x2, y1, y2, z1, z2, on) in enumerate(C):
         if p1:
             x1 = max(x1, -50)
@@ -88,12 +88,12 @@ def solve(p1):
             for y in range(Y[y1], Y[y2+1]):
                 for z in range(Z[z1], Z[z2+1]):
                     if on:
-                        G.add((x, y, z))
+                        g.add((x, y, z))
                     else:
-                        G.discard((x, y, z))
+                        g.discard((x, y, z))
 
     ans = 0
-    for x, y, z in G:
+    for x, y, z in g:
         lx = UX[x]
         ly = UY[y]
         lz = UZ[z]
